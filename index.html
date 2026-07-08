@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — SHIN Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C2430; --dim:#5B6673; --line:#E3E7EC; --bg:#FFFFFF; --tint:#F5F7FA; --lu:#653819;
+  --S:#3E6FB8; --H:#D98A2B; --I:#8A63C9; --N:#3E9B67;
+  --f-disp:"Space Grotesk",system-ui,sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f-body);color:var(--ink);background:var(--bg);line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:38px 22px 60px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-family:var(--f-disp)}
+h1{font-family:var(--f-disp);font-size:clamp(26px,4vw,36px);line-height:1.12;margin:8px 0 12px}
+h1 em{font-style:normal;border-bottom:4px solid var(--lu)}
+.lead{max-width:760px;color:var(--dim);font-size:15px}
+.lead b{color:var(--ink)}
+.section{margin-top:44px}
+.kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-family:var(--f-disp)}
+h2{font-family:var(--f-disp);font-size:21px;margin:4px 0 14px}
+/* featured programs */
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.program{border:1px solid var(--line);border-top:3px solid var(--pc);background:var(--tint);padding:16px}
+.program .num{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pc);font-family:var(--f-disp);font-weight:700}
+.program h3{font-family:var(--f-disp);font-size:16.5px;margin:5px 0 8px;line-height:1.3}
+.fig-ph{height:110px;margin:2px 0 10px;border:1px dashed var(--line);position:relative;
+  background:repeating-linear-gradient(45deg,var(--tint),var(--tint) 10px,#fff 10px,#fff 20px)}
+.fig-ph span{position:absolute;inset:auto 7px 7px 7px;font-size:10px;color:var(--dim);background:#fffd;padding:2px 6px}
+.program p{font-size:12.5px;color:var(--dim)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:10px;color:var(--dim);background:#fff;border:1px solid var(--line);padding:2px 7px}
+/* pillar quick lists */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.pillar{border-left:4px solid var(--pc);padding:2px 0 2px 14px}
+.pillar .pl{display:flex;align-items:baseline;gap:8px}
+.pillar .pl b{font-family:var(--f-disp);font-size:26px;color:var(--pc);line-height:1}
+.pillar .pl span{font-family:var(--f-disp);font-size:14px;font-weight:700}
+.pillar .lens{font-size:11px;color:var(--dim);margin:2px 0 8px}
+.pillar ul{list-style:none}
+.pillar li{font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line)}
+.pillar li:last-child{border-bottom:none}
+.pillar li .st{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:1px}
+.st.active{background:#E3ECF8;color:#2D5490}
+.st.emerging{background:#ECEEF1;color:#5B6673}
+/* collab strip */
+.collab{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.collab article{background:var(--tint);border:1px solid var(--line);padding:12px 14px}
+.collab h3{font-family:var(--f-disp);font-size:13px;margin-bottom:4px}
+.collab p{font-size:11.5px;color:var(--dim)}
+/* cta + foot */
+.cta{margin-top:46px;background:var(--ink);color:#fff;padding:24px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta h2{color:#fff;margin:0 0 4px}
+.cta p{font-size:13px;color:#C9D2DE;max-width:560px}
+.btn{font-family:var(--f-disp);font-size:13px;padding:9px 16px;border:1.5px solid #fff;color:#fff;text-decoration:none;white-space:nowrap}
+.btn.primary{background:#fff;color:var(--ink)}
+.foot{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--dim);display:flex;flex-direction:column;gap:3px}
+@media print{.cta{display:none}}
+</style>
+</head>
+<body>
+<!-- Brief public version. Scope-sensitive items (unpublished framings, method details,
+     grant directions, theory concepts) are intentionally generalized or omitted.
+     The fuller draft lives at research/full.html (not linked). -->
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">SHIN Lab · Lehigh University College of Health</div>
+  <h1>Research on health behavior <em>in context</em></h1>
+  <p class="lead">SHIN Lab studies where people <b>live, move, sleep, and recover</b>. We combine spatial epidemiology,
+  wearable and environmental sensing, and community-engaged research to understand how everyday environments shape
+  sleep, physical activity, and well-being. The four letters of the lab's name — <b>Space · Health · Interaction · Nature</b> —
+  are also its four research pillars.</p>
+</header>
+
+<section class="section">
+  <div class="kicker">Featured programs</div>
+  <h2>Three connected lines of work</h2>
+  <div class="prog-grid">
+    <article class="program" style="--pc:var(--H)">
+      <div class="num">Program 01</div>
+      <h3>Environmental Context, Sleep &amp; Recovery</h3>
+      <div class="fig-ph"><span>Featured visual — nighttime-light &amp; sleep map</span></div>
+      <p>How nighttime light, environmental noise, and neighborhood conditions pattern who sleeps well —
+      studied with satellite data, sensors, wearables, and spatial epidemiology.</p>
+      <div class="tags"><span class="tag">Sleep</span><span class="tag">Spatial epidemiology</span><span class="tag">Environmental exposure</span></div>
+    </article>
+    <article class="program" style="--pc:var(--S)">
+      <div class="num">Program 02</div>
+      <h3>Healthy Mobility, Walkability &amp; Equitable Access</h3>
+      <div class="fig-ph"><span>Featured visual — walkability / 360° audit image</span></div>
+      <p>Community audits, GIS, 360° imagery, and public data — developed with students and community
+      and municipal partners — to understand whether streets and parks support safe, active living.</p>
+      <div class="tags"><span class="tag">GIS</span><span class="tag">Walkability</span><span class="tag">Community-engaged</span></div>
+    </article>
+    <article class="program" style="--pc:var(--I)">
+      <div class="num">Program 03</div>
+      <h3>Wearables &amp; Multimodal Health Measurement</h3>
+      <div class="fig-ph"><span>Featured visual — sensing workflow diagram</span></div>
+      <p>Evaluating how wearable, environmental, video-derived, and self-reported data can be trusted and
+      combined to measure sleep, activity, and affect in real-world settings, across the lifespan.</p>
+      <div class="tags"><span class="tag">Wearables</span><span class="tag">Validation</span><span class="tag">Multimodal sensing</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">Research across SHIN</div>
+  <h2>Selected projects by pillar</h2>
+  <div class="pillars">
+    <div class="pillar" style="--pc:var(--S)">
+      <div class="pl"><b>S</b><span>Space</span></div>
+      <div class="lens">Where health happens</div>
+      <ul>
+        <li>Lehigh Valley Walkability &amp; Accessibility <span class="st active">Active</span></li>
+        <li>Public Perceptions, Park Quality &amp; Neighborhood Health <span class="st active">Active</span></li>
+      </ul>
+    </div>
+    <div class="pillar" style="--pc:var(--H)">
+      <div class="pl"><b>H</b><span>Health</span></div>
+      <div class="lens">Outcomes &amp; disparities</div>
+      <ul>
+        <li>Nighttime Light, Urban Context &amp; Insufficient Sleep <span class="st active">Active</span></li>
+        <li>Environmental Noise &amp; Student Sleep <span class="st active">Active</span></li>
+        <li>Fitness Disparities Among Korean Older Adults <span class="st active">Active</span></li>
+      </ul>
+    </div>
+    <div class="pillar" style="--pc:var(--I)">
+      <div class="pl"><b>I</b><span>Interaction</span></div>
+      <div class="lens">People × behavior × technology</div>
+      <ul>
+        <li>Multi-Device Measurement of Sleep &amp; Physical Activity <span class="st active">Active</span></li>
+        <li>Multimodal Daily-Life Assessment in Korean Older Adults <span class="st active">Active</span></li>
+      </ul>
+    </div>
+    <div class="pillar" style="--pc:var(--N)">
+      <div class="pl"><b>N</b><span>Nature</span></div>
+      <div class="lens">Green &amp; restorative environments</div>
+      <ul>
+        <li>Greenspace, Well-Being &amp; Sleep During COVID-19 <span class="st active">Active</span></li>
+        <li>Park Access &amp; Physical Activity Among Autistic Populations <span class="st active">Active</span></li>
+        <li>Mindful Steps into the Forest <span class="st emerging">Emerging</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">Selected collaborative research</div>
+  <h2>Methods that travel across fields</h2>
+  <div class="collab">
+    <article><h3>Clinical &amp; occupational wearables</h3><p>Sleep, fatigue, and activity assessment among medical trainees and health professionals.</p></article>
+    <article><h3>Indigenous health interventions</h3><p>Measurement expertise for culturally grounded weight-management research.</p></article>
+    <article><h3>AI &amp; population health</h3><p>Collaborative scholarship on multimodal AI opportunities and safeguards in public health.</p></article>
+    <article><h3>Sports, recovery &amp; injury</h3><p>Sleep and recovery analyses in athletic and performance settings.</p></article>
+    <article><h3>Textile-integrated sensing</h3><p>Physiological stress and recovery measurement collaborations.</p></article>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>Work with SHIN Lab</h2>
+    <p>We welcome students, community organizations, health systems, municipalities, and researchers working on
+    sleep, physical activity, healthy mobility, environmental context, and technology-enabled measurement.</p>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a class="btn primary" href="https://sites.google.com/view/shin-lu/contact">Contact the lab</a>
+    <a class="btn" href="https://sites.google.com/view/shin-lu">Lab home</a>
+  </div>
+</section>
+
+<p class="foot">
+<span><b>SHIN Lab</b> — Space · Health · Interaction · Nature · Lehigh University College of Health</span>
+<span>Embed: Google Sites → Insert → Embed → By URL → this page's address.</span>
+</p>
+</div>
+</body>
+</html>
